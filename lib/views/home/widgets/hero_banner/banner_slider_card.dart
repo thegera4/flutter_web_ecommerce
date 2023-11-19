@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
+// Widget for each banner slider card (hero banner)
 class BannerSliderCard extends StatelessWidget {
   const BannerSliderCard({
     super.key,
@@ -33,6 +34,7 @@ class BannerSliderCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                       ),
+                      const SizedBox(height: 20,),
                       InkWell(
                         onTap: press,
                         child: Container(

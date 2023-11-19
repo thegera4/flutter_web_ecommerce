@@ -18,19 +18,19 @@ class _HeaderMenuState extends State<HeaderMenu> {
         MenuItems(
           isActive: true,
           title: "Home",
-          press: () { print("clicked home"); },
+          press: () {},
         ),
         MenuItems(
           title: "Products",
-          press: () { print("clicked products"); },
+          press: () {},
         ),
         MenuItems(
           title: "Category",
-          press: () { print("clicked add category"); },
+          press: () {},
         ),
         MenuItems(
           title: "Contact Us",
-          press: () { print("clicked contact us"); },
+          press: () {},
         ),
       ],
     );

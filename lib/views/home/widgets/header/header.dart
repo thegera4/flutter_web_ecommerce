@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
-import 'package:flutter_web_ecommerce/views/home/widgets/header_menu.dart';
+import 'header_menu.dart';
 
 // Widget for the header (top bar / navigation bar)
 class Header extends StatefulWidget {
@@ -42,7 +42,7 @@ class _HeaderState extends State<Header> {
                         const HeaderMenu(),
                         const Spacer(),
                         IconButton(
-                            onPressed: (){ print("clicked search"); },
+                            onPressed: (){},
                             icon: const Icon(
                               Icons.search,
                               color: kDarkgreyColor,
@@ -50,7 +50,7 @@ class _HeaderState extends State<Header> {
                             )
                         ),
                         IconButton(
-                            onPressed: (){ print("clicked shopping cart"); },
+                            onPressed: (){},
                             icon: const Icon(
                               Icons.shopping_cart_outlined,
                               color: kDarkgreyColor,
@@ -58,7 +58,7 @@ class _HeaderState extends State<Header> {
                             )
                         ),
                         IconButton(
-                            onPressed: (){ print("clicked person"); },
+                            onPressed: (){},
                             icon: const Icon(
                               Icons.person_outline,
                               color: kDarkgreyColor,

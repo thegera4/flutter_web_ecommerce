@@ -14,8 +14,8 @@ const kDefaultDuration = Duration(milliseconds: 250);
 
 //product shadow
 final kDefaultShadow = BoxShadow(
-  offset: const Offset(0, 10),
-  spreadRadius: 5,
+  offset: const Offset(0, 20),
+  spreadRadius: 10,
   blurRadius: 20,
   color: const Color(0xFF0700B1).withOpacity(0.15),
 );
