@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
+import 'package:flutter_web_ecommerce/views/home/widgets/banner_slider_card.dart';
+import 'package:flutter_web_ecommerce/views/home/widgets/header.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,117 +13,57 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>{
 
-  bool isAdmin = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
       body: Column(
         children: [
+          const Header(),
           Container(
-            color: kWhiteColor,
-            width: double.infinity,
-            child: Column(
-              children: [
-                Container(
-                  constraints: const BoxConstraints(
-                    maxWidth: kMaxWidth,
+            color: kgreyColor,
+            child: CarouselSlider(
+                items: [
+                  BannerSliderCard(
+                      title: "The right headphones,",
+                      image: 'assets/products/banner/banner_1.png',
+                      press: (){ print("clicked banner 1"); }
                   ),
-                  child: Column(
-                    children: [
-                      Row(
-                          children: [
-                            const Text(
-                              "Logo here",
-                              textScaleFactor: 1.6,
-                              style: TextStyle(
-                                color: kDarkblueColor,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Spacer(), // it will take available space
-                            MenuItems(
-                              title: "Home",
-                              press: () { print("clicked home"); },
-                            ),
-                            MenuItems(
-                              title: "Products",
-                              press: () { print("clicked products"); },
-                            ),
-                            isAdmin ?
-                              MenuItems(
-                                title: "Add Product",
-                                press: () { print("clicked add product"); },
-                              ) :
-                              Container(),
-                            MenuItems(
-                              title: "Login",
-                              press: () { print("clicked login"); },
-                            ),
-                          ]
-                      ),
-                    ],
+                  BannerSliderCard(
+                      title: "Hottest Mobiles",
+                      image: 'assets/products/banner/banner_2.png',
+                      press: (){ print("clicked banner 2"); }
                   ),
+                  BannerSliderCard(
+                      title: "Headphones",
+                      image: 'assets/products/banner/banner_3.png',
+                      press: (){ print("clicked banner 3"); }
+                  ),
+                  BannerSliderCard(
+                      title: "Gaming Headphones",
+                      image: 'assets/products/banner/banner_4.png',
+                      press: (){ print("clicked banner 4"); }
+                  ),
+                ],
+                options: CarouselOptions(
+                  height: 500,
+                  aspectRatio: 16/9,
+                  viewportFraction: 1,
+                  initialPage: 0,
+                  enableInfiniteScroll: true,
+                  reverse: false,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enlargeCenterPage: true,
+                  enlargeFactor: 0.3,
+                  //onPageChanged: callbackFunction,
+                  scrollDirection: Axis.horizontal,
                 )
-              ],
             ),
           )
         ],
-      ),
-    );
-  }
-}
-
-// Widget for each header menu item (Home, About, Services, Contact, etc.)
-class MenuItems extends StatefulWidget {
-  const MenuItems({Key? key, required this.title, required this.press}) :
-        super(key: key);
-
-  final String title;
-  final VoidCallback press;
-
-
-  @override
-  State<MenuItems> createState() => _MenuItemsState();
-}
-
-class _MenuItemsState extends State<MenuItems> {
-
-  bool isHover = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric( horizontal: 10, ),
-      child: InkWell(
-        onTap: () { widget.press(); },
-        onHover: (value) {
-          setState(() {
-            isHover = value;
-          });
-        },
-        child: Container(
-          padding: const EdgeInsets.symmetric( vertical: 4.0, ),
-          decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: isHover ?
-                  kPrimaryColor : Colors.transparent,
-                  width: 4,
-                ),
-              )
-          ),
-          child: Text(
-            widget.title,
-            style: TextStyle(
-              color: isHover ?
-              kPrimaryColor : Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
-        ),
       ),
     );
   }
