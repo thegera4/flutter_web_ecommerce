@@ -1,6 +1,6 @@
 # flutter_web_ecommerce
 
-Frontend for fastAPI ecommerce API project
+Frontend for fastAPI ecommerce API project..Work in Progress...
 
 ## Getting Started
 
