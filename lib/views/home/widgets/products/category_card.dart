@@ -24,7 +24,7 @@ class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: InkWell(
         onTap: widget.press,
         onHover: (value) { setState(() { isHover = value; }); },
