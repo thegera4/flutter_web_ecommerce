@@ -4,14 +4,14 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_web_ecommerce/views/home/widgets/products/home_product_card.dart';
 
 // Widget to show the trending products section in a grid view
-class Trending extends StatefulWidget {
-  const Trending({super.key,});
+class IphoneProducts extends StatefulWidget {
+  const IphoneProducts({super.key,});
 
   @override
-  State<Trending> createState() => _TrendingState();
+  State<IphoneProducts> createState() => _IphoneProductsState();
 }
 
-class _TrendingState extends State<Trending> {
+class _IphoneProductsState extends State<IphoneProducts> {
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,13 @@ class _TrendingState extends State<Trending> {
         crossAxisCount: 4,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        children: List.generate(trendingProducts.length, (index) {
+        children: List.generate(iPhoneProducts.length, (index) {
           return HomeProductCard(
-            product: trendingProducts[index],
+            product: iPhoneProducts[index],
             press: () {},
           );
         })
     );
   }
 }
+
