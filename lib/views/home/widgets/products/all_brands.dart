@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
-import 'package:flutter_web_ecommerce/views/home/widgets/products/iphone_products.dart';
+import 'package:flutter_web_ecommerce/models/trending.dart';
+import 'package:flutter_web_ecommerce/views/home/widgets/products/staggered_all_brands.dart';
 
 class AllBrands extends StatefulWidget {
   const AllBrands({super.key});
@@ -12,11 +13,11 @@ class AllBrands extends StatefulWidget {
 class _AllBrandsState extends State<AllBrands> {
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
         length: 3,
         child: Column(
           children: [
-            TabBar(
+            const TabBar(
                 indicatorColor: kPrimaryColor,
                 unselectedLabelColor: Colors.black,
                 labelColor: kPrimaryColor,
@@ -30,14 +31,21 @@ class _AllBrandsState extends State<AllBrands> {
                 ]
             ),
             SizedBox(
-              height: 1100,
+              height: 320,
               child: TabBarView(
                   children: [
                     Padding(
-                        padding: EdgeInsets.symmetric(vertical: 30),
-                        child: IphoneProducts()),
-                    Text("SAMSUNG"),
-                    Text("HEADPHONES"),
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        child: StaggeredAllBrands(products: iPhoneProducts,)
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        child: StaggeredAllBrands(products: samsungProducts,)
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 30),
+                        child: StaggeredAllBrands(products: headphoneProducts,)
+                    ),
                   ]
               ),
             ),
