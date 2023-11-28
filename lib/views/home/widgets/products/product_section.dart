@@ -3,6 +3,7 @@ import 'package:flutter_web_ecommerce/views/home/widgets/products/all_brands.dar
 import 'package:flutter_web_ecommerce/views/home/widgets/products/category.dart';
 import 'package:flutter_web_ecommerce/views/home/widgets/products/products_section_title.dart';
 import 'package:flutter_web_ecommerce/views/home/widgets/products/trending.dart';
+import 'package:flutter_web_ecommerce/views/home/widgets/reviews/latest_reviews.dart';
 import '../../../../constants.dart';
 
 // Widget to group all home products sections (categories,trending,reviews,etc)
@@ -34,7 +35,10 @@ class _ProductSectionState extends State<ProductSection> {
               ProductsSectionTitle(title: "All Brands"),
               SizedBox(height: 20),
               AllBrands(),
-              SizedBox(height: 100),
+              SizedBox(height: 40),
+              ProductsSectionTitle(title: "Latest Reviews"),
+              SizedBox(height: 20),
+              LatestReviews(),
             ],
           ),
         ),
