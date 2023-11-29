@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
+import '../../../../responsive.dart';
 import 'header_menu.dart';
 
 // Widget for the header (top bar / navigation bar)
@@ -27,9 +28,17 @@ class _HeaderState extends State<Header> {
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
+                    horizontal: 10
                   ),
                   child: Row(
                       children: [
+                        if(!Responsive.isDesktop(context))
+                        IconButton(
+                            onPressed: (){
+                              Scaffold.of(context).openDrawer();
+                            },
+                            icon: const Icon(Icons.menu)
+                        ),
                         const Text(
                           "Logo here",
                           textScaleFactor: 1.6,
@@ -39,6 +48,7 @@ class _HeaderState extends State<Header> {
                           ),
                         ),
                         const Spacer(), // it will take available space
+                        if(Responsive.isDesktop(context))
                         const HeaderMenu(),
                         const Spacer(),
                         IconButton(

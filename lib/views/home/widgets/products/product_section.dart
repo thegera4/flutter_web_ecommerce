@@ -39,6 +39,7 @@ class _ProductSectionState extends State<ProductSection> {
               ProductsSectionTitle(title: "Latest Reviews"),
               SizedBox(height: 20),
               LatestReviews(),
+              SizedBox(height: 100),
             ],
           ),
         ),
