@@ -17,6 +17,9 @@ class _HomeScreenState extends State<HomeScreen>{
 
   @override
   Widget build(BuildContext context) {
+
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: kWhiteColor,
       drawer: Drawer(
@@ -25,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>{
             const DrawerHeader(
               child: Center(
                 child: Text(
-                          "Logo here",
+                          "Shoptastic!",
                           textScaleFactor: 1.6,
                           style: TextStyle(
                             color: kDarkblueColor,
@@ -67,13 +70,13 @@ class _HomeScreenState extends State<HomeScreen>{
           ],
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Header(),
-            BannerSlider(),
-            ProductSection(),
-            Footer()
+            Header(size: size),
+            BannerSlider(size: size),
+            ProductSection(size: size),
+            const Footer()
           ],
         ),
       ),

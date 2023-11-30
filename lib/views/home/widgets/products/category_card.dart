@@ -7,11 +7,13 @@ class CategoryCard extends StatefulWidget {
     super.key,
     required this.image,
     required this.press,
-    required this.title
+    required this.title,
+    required this.size,
   });
 
   final String image, title;
   final VoidCallback press;
+  final Size size;
 
   @override
   State<CategoryCard> createState() => _CategoryCardState();
@@ -24,13 +26,14 @@ class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.all(10),
       child: InkWell(
         onTap: widget.press,
         onHover: (value) { setState(() { isHover = value; }); },
         child: Container(
+          width: widget.size.width <= 770 ? widget.size.width :
+                 widget.size.width >= 975 ? 300 : 200,
           padding: const EdgeInsets.symmetric(vertical: 10),
-          width: 300,
           decoration: BoxDecoration(
             color: kgreyColor,
             boxShadow: [ if (isHover) kDefaultShadow, ],
@@ -41,7 +44,6 @@ class _CategoryCardState extends State<CategoryCard> {
               Image.asset(
                 widget.image,
                 height: 200,
-                width: 200,
                 fit: BoxFit.contain,
               ),
               const SizedBox(height: 15),

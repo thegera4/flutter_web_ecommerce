@@ -8,38 +8,42 @@ import '../../../../constants.dart';
 
 // Widget to group all home products sections (categories,trending,reviews,etc)
 class ProductSection extends StatefulWidget {
-  const ProductSection({super.key});
+  const ProductSection({super.key, required this.size});
+
+  final Size size;
 
   @override
   State<ProductSection> createState() => _ProductSectionState();
 }
 
 class _ProductSectionState extends State<ProductSection> {
+
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
         Container(
           constraints: const BoxConstraints(maxWidth: kMaxWidth),
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
-              ProductsSectionTitle(title: "Brands"),
-              Category(),
-              SizedBox(height: 20),
-              ProductsSectionTitle(title: "Trending"),
-              SizedBox(height: 20),
-              Trending(),
-              SizedBox(height: 20),
-              ProductsSectionTitle(title: "All Brands"),
-              SizedBox(height: 20),
-              AllBrands(),
-              SizedBox(height: 40),
-              ProductsSectionTitle(title: "Latest Reviews"),
-              SizedBox(height: 20),
-              LatestReviews(),
-              SizedBox(height: 100),
+              const SizedBox(height: 20),
+              const ProductsSectionTitle(title: "Brands"),
+              Category(size: widget.size),
+              const SizedBox(height: 20),
+              const ProductsSectionTitle(title: "Trending"),
+              const SizedBox(height: 20),
+              Trending(size: widget.size),
+              const SizedBox(height: 20),
+              const ProductsSectionTitle(title: "All Brands"),
+              const SizedBox(height: 20),
+              const AllBrands(),
+              const SizedBox(height: 40),
+              const ProductsSectionTitle(title: "Latest Reviews"),
+              const SizedBox(height: 20),
+              const LatestReviews(),
+              const SizedBox(height: 100),
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 
@@ -7,14 +8,17 @@ class BannerSliderCard extends StatelessWidget {
     super.key,
     required this.title,
     required this.image,
-    required this.press
+    required this.press,
+    required this.size,
   });
 
   final String title, image;
   final VoidCallback press;
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
@@ -27,10 +31,13 @@ class BannerSliderCard extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AutoSizeText(
                           "$title made for you",
-                          textScaleFactor: 2.5,
-                          style: const TextStyle(
+                          textAlign: TextAlign.center,
+                          minFontSize: 16,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontSize: size.width >= 500 ? 28 : 18,
                             fontWeight: FontWeight.bold,
                           ),
                       ),
@@ -45,9 +52,10 @@ class BannerSliderCard extends StatelessWidget {
                           decoration: const BoxDecoration(
                             color: Colors.black,
                           ),
-                          child: const Text(
+                          child: Text(
                             "Shop now",
                             style: TextStyle(
+                              fontSize: size.width >= 500 ? 18 : 12,
                               color: kWhiteColor,
                               fontWeight: FontWeight.bold,
                             ),
@@ -58,7 +66,19 @@ class BannerSliderCard extends StatelessWidget {
 
                   ),
               ),
-              Expanded(child: Image.asset(image))
+              Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                            image,
+                            height: size.width >= 500 ? 400 : 200,
+                            width: size.width >= 500 ? 400 : 200,
+                            fit: BoxFit.contain,
+                        )
+                      ]
+                  )
+              )
         ],
       ),
     );

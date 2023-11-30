@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
 import '../../../../responsive.dart';
@@ -5,7 +6,9 @@ import 'header_menu.dart';
 
 // Widget for the header (top bar / navigation bar)
 class Header extends StatefulWidget {
-  const Header({super.key});
+  const Header({super.key, required this.size});
+
+  final Size size;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -39,11 +42,12 @@ class _HeaderState extends State<Header> {
                             },
                             icon: const Icon(Icons.menu)
                         ),
-                        const Text(
-                          "Logo here",
-                          textScaleFactor: 1.6,
+                        AutoSizeText(
+                          "Shoptastic!",
+                          maxLines: 1,
+                          minFontSize: 16,
                           style: TextStyle(
-                            color: kDarkblueColor,
+                            fontSize: widget.size.width >= 348 ? 22 : 17,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

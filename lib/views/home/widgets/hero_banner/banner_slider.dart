@@ -4,9 +4,11 @@ import 'package:flutter_web_ecommerce/constants.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'banner_slider_card.dart';
 
-// Widget for the hero banner (slider)
+// Widget for the hero banner (slider) to group all banner slider cards
 class BannerSlider extends StatefulWidget {
-  const BannerSlider({super.key});
+  const BannerSlider({super.key, required this.size});
+
+  final Size size;
 
   @override
   State<BannerSlider> createState() => _BannerSliderState();
@@ -14,10 +16,11 @@ class BannerSlider extends StatefulWidget {
 
 class _BannerSliderState extends State<BannerSlider> {
 
-  int index = 0;
-
   @override
   Widget build(BuildContext context) {
+
+    int index = 0;
+
     return Column(
       children: [
         CarouselSlider(
@@ -25,26 +28,31 @@ class _BannerSliderState extends State<BannerSlider> {
                 BannerSliderCard(
                     title: "The right headphones,",
                     image: 'assets/products/banner/banner_1.png',
-                    press: (){}
+                    press: (){},
+                    size: widget.size,
                 ),
                 BannerSliderCard(
                     title: "Hottest Mobiles",
                     image: 'assets/products/banner/banner_2.png',
-                    press: (){}
+                    press: (){},
+                    size: widget.size,
                 ),
                 BannerSliderCard(
                     title: "Headphones",
                     image: 'assets/products/banner/banner_3.png',
-                    press: (){}
+                    press: (){},
+                    size: widget.size,
                 ),
                 BannerSliderCard(
                     title: "Gaming Headphones",
                     image: 'assets/products/banner/banner_4.png',
-                    press: (){}
+                    press: (){},
+                    size: widget.size,
                 ),
               ],
               options: CarouselOptions(
-                height: 500,
+                height: widget.size.width == 300 ? 250 :
+                        widget.size.width >= 500 ? 500 : 300,
                 aspectRatio: 16/9,
                 viewportFraction: 1,
                 initialPage: 0,

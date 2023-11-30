@@ -3,8 +3,8 @@ import 'package:flutter_web_ecommerce/constants.dart';
 import 'package:flutter_web_ecommerce/models/trending.dart';
 
 // Widget to show a card for trending products
-class HomeProductCard extends StatefulWidget {
-  const HomeProductCard({
+class MobileHomeProductCard extends StatefulWidget {
+  const MobileHomeProductCard({
     super.key,
     required this.product,
     required this.press
@@ -14,10 +14,10 @@ class HomeProductCard extends StatefulWidget {
   final VoidCallback press;
 
   @override
-  State<HomeProductCard> createState() => _HomeProductCardState();
+  State<MobileHomeProductCard> createState() => _MobileHomeProductCardState();
 }
 
-class _HomeProductCardState extends State<HomeProductCard> {
+class _MobileHomeProductCardState extends State<MobileHomeProductCard> {
 
   bool isHover = false;
 
