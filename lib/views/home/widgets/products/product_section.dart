@@ -38,11 +38,14 @@ class _ProductSectionState extends State<ProductSection> {
               const SizedBox(height: 20),
               const ProductsSectionTitle(title: "All Brands"),
               const SizedBox(height: 20),
-              const AllBrands(),
+              AllBrands(size: widget.size),
               const SizedBox(height: 40),
               const ProductsSectionTitle(title: "Latest Reviews"),
               const SizedBox(height: 20),
-              const LatestReviews(),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: LatestReviews(size: widget.size)
+              ),
               const SizedBox(height: 100),
             ],
           ),

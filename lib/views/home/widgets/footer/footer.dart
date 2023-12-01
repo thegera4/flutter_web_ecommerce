@@ -3,15 +3,19 @@ import 'package:flutter_web_ecommerce/constants.dart';
 import 'package:flutter_web_ecommerce/views/home/widgets/header/header_menu.dart';
 
 class Footer extends StatefulWidget {
-  const Footer({super.key});
+  const Footer({super.key, required this.size});
+
+  final Size size;
 
   @override
   State<Footer> createState() => _FooterState();
 }
 
 class _FooterState extends State<Footer> {
+
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
         Container(
@@ -26,13 +30,13 @@ class _FooterState extends State<Footer> {
                   InkWell(
                     onTap: () {},
                     child: const Text(
-                      "Footer Logo",
+                      "Shoptastic!",
                       textScaleFactor: 1.6,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                   const Spacer(),
-                  const HeaderMenu(),
+                  widget.size.width > 500 ? const HeaderMenu() : Container(),
                 ],
               ),
             ],

@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen>{
             Header(size: size),
             BannerSlider(size: size),
             ProductSection(size: size),
-            const Footer()
+            Footer(size: size)
           ],
         ),
       ),
