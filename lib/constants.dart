@@ -19,3 +19,13 @@ final kDefaultShadow = BoxShadow(
   blurRadius: 20,
   color: const Color(0xFF0700B1).withOpacity(0.15),
 );
+
+
+//auth
+const String loginOk = "User logged in successfully!";
+const String registerOk = "Account created successfully!";
+const String customRegisterOk = "User created successfully!";
+const String logoutOk = "Logged out successfully!";
+const String logoutError = "Error during logout!";
+const String cookieName = "jwt";
+const String localHost = "https://jwt-auth-api-production-2459.up.railway.app";

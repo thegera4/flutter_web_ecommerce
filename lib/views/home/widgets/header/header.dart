@@ -1,6 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
+import 'package:flutter_web_ecommerce/routing/routes.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../responsive.dart';
 import 'header_menu.dart';
 
@@ -72,7 +75,9 @@ class _HeaderState extends State<Header> {
                             )
                         ),
                         IconButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Get.toNamed(authenticationPageRoute);
+                            },
                             icon: const Icon(
                               Icons.person_outline,
                               color: kDarkgreyColor,

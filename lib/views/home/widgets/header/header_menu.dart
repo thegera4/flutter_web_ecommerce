@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_ecommerce/routing/routes.dart';
+import 'package:get/get.dart';
 import 'menu_item.dart';
 
 // Widget to group all header menu items
@@ -18,11 +20,11 @@ class _HeaderMenuState extends State<HeaderMenu> {
         MenuItems(
           isActive: true,
           title: "Home",
-          press: () {},
+          press: () { Get.toNamed(rootRoute); },
         ),
         MenuItems(
           title: "Products",
-          press: () {},
+          press: () { Get.toNamed(productsPageRoute); },
         ),
         MenuItems(
           title: "Category",
