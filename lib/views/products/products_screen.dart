@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_ecommerce/views/products/widgets/all_products.dart';
+import 'package:flutter_web_ecommerce/views/products/widgets/sidebar.dart';
 import '../../constants.dart';
 import '../home/widgets/footer/footer.dart';
 import '../home/widgets/header/header.dart';
@@ -72,7 +74,15 @@ class _ProductsScreenState extends State<ProductsScreen> {
         child: Column(
           children: [
             Header(size: size),
-            const Text("Products screen"),
+            Container(
+              constraints: const BoxConstraints(maxWidth: kMaxWidth),
+              child: Row(
+                children: [
+                  Sidebar(size: size),
+                  AllProducts(size: size)
+                ],
+              ),
+            ),
             Footer(size: size)
           ],
         ),
