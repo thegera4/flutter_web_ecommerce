@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_ecommerce/views/products/widgets/all_products_group.dart';
 
 class AllProducts extends StatefulWidget {
   const AllProducts({super.key, required this.size});
@@ -12,12 +13,10 @@ class AllProducts extends StatefulWidget {
 class _AllProductsState extends State<AllProducts> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        Text("1st ROW of cards"),
-        SizedBox(height: 20,),
-        Text("2nd ROW of cards"),
-        SizedBox(height: 20,),
+        AllProductsGroup(size: widget.size),
+        const SizedBox(height: 20,),
       ],
     );
   }

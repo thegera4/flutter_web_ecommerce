@@ -29,3 +29,7 @@ const String logoutOk = "Logged out successfully!";
 const String logoutError = "Error during logout!";
 const String cookieName = "jwt";
 const String localHost = "https://jwt-auth-api-production-2459.up.railway.app";
+
+//texts
+const String home = "Home";
+const String products = "Products";

@@ -16,10 +16,10 @@ class _SidebarState extends State<Sidebar> {
 
     return SizedBox(
       width: 200,
+      height: widget.size.height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20,),
           const ProductsSectionTitle(title: "Category"),
           const SizedBox(height: 20,),
           Column(

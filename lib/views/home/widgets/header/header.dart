@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/constants.dart';
 import 'package:flutter_web_ecommerce/routing/routes.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../../../responsive.dart';
 import 'header_menu.dart';
 
@@ -18,8 +17,12 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
+
   @override
   Widget build(BuildContext context) {
+
+
+
     return Container(
       color: kWhiteColor,
       width: double.infinity,
