@@ -22,9 +22,14 @@ class _AllProductsGroupState extends State<AllProductsGroup> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 1000),
+        constraints: BoxConstraints(
+            maxWidth: widget.size.width > 1220 ? 1000 :
+            widget.size.width > 1023 ? 800 :
+            widget.size.width > 763 ? 550 : 300
+                // incluir los breakpoint para mobile aqui
+        ),
         child: StaggeredGrid.count(
-            crossAxisCount: widget.size.width > 1020 ? 4 : 2,
+            crossAxisCount: widget.size.width > 1220 ? 4 : 2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             children: List.generate(allProducts.length, (index) {

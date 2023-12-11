@@ -16,7 +16,8 @@ class _SidebarState extends State<Sidebar> {
 
     return SizedBox(
       width: 200,
-      height: widget.size.height,
+      height: widget.size.width > 1220 ? widget.size.height : 2050,
+      //agregar aqui los breakpoints para mobile
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
