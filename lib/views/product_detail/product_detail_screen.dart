@@ -6,7 +6,6 @@ import '../../constants.dart';
 import '../home/widgets/footer/footer.dart';
 import '../home/widgets/header/header.dart';
 import '../home/widgets/header/menu_item.dart';
-//import '../home/widgets/products/product_section.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -77,15 +76,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
+      body: Column(
           children: [
             Header(size: size),
-            Details(size: size),
+            Expanded(
+                child: Align(
+                    alignment: Alignment.center,
+                    child: Details(size: size)
+                )
+            ),
             Footer(size: size)
           ],
         ),
-      ),
     );
   }
 }

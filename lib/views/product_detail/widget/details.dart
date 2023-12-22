@@ -21,17 +21,22 @@ class _DetailsState extends State<Details> {
     return SizedBox(
       width: kMaxWidth,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children:[
-            Image.asset(
+              Expanded(
+                child: Container(),
+              ),
+              Image.asset(
               product.image ?? "assets/products/iPhone/iphone1.jpeg",
               height: 350,
               width: 350,
               fit: BoxFit.contain,
             ),
-            Column(
+              Container(width: 250,),
+              Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -104,6 +109,9 @@ class _DetailsState extends State<Details> {
                 ),
               ],
             ),
+              Expanded(
+                child: Container(),
+              ),
             ],
           ),
         ],
