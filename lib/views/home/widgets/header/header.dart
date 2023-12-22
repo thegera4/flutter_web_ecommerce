@@ -79,7 +79,7 @@ class _HeaderState extends State<Header> {
                         ),
                         IconButton(
                             onPressed: (){
-                              Get.toNamed(authenticationPageRoute);
+                              Get.toNamed(AppPages.authentication);
                             },
                             icon: const Icon(
                               Icons.person_outline,

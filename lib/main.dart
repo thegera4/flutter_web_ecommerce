@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_ecommerce/routing/routes.dart';
 import 'dart:ui';
-import 'package:flutter_web_ecommerce/views/home/home_screen.dart';
-import 'package:flutter_web_ecommerce/views/products/products_screen.dart';
+//import 'package:flutter_web_ecommerce/views/home/home_screen.dart';
+//import 'package:flutter_web_ecommerce/views/product_detail/product_detail_screen.dart';
+//import 'package:flutter_web_ecommerce/views/products/products_screen.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
+//import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 void main() {
@@ -18,14 +19,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       scrollBehavior: MyCustomScrollBehavior(),
-      initialRoute: rootRoute,
+      //initialRoute: rootRoute,
+      initialRoute: AppPages.root,
       //unknownRoute:
         //GetPage(name: '/not-found', page: () => const PageNotFound()),
       defaultTransition: Transition.noTransition,
-      getPages: [
+      /*getPages: [
         GetPage(name: rootRoute, page: () => const HomeScreen()),
         GetPage(name: productsPageRoute, page: () => const ProductsScreen()),
-      ],
+        GetPage(name: productDetailsPageRoute, page: () => const ProductDetailScreen()),
+      ],*/
+      getPages: AppPages.routes,
       title: 'Shoptastic! e-commerce',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

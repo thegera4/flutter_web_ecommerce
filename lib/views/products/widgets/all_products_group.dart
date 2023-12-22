@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart";
+import "package:get/get.dart";
 import "../../../models/trending.dart";
 import "../../../responsive.dart";
 import "../../home/widgets/products/home_product_card.dart";
@@ -26,7 +27,6 @@ class _AllProductsGroupState extends State<AllProductsGroup> {
             maxWidth: widget.size.width > 1220 ? 1000 :
             widget.size.width > 1023 ? 800 :
             widget.size.width > 763 ? 550 : 300
-                // incluir los breakpoint para mobile aqui
         ),
         child: StaggeredGrid.count(
             crossAxisCount: widget.size.width > 1220 ? 4 : 2,
@@ -36,12 +36,22 @@ class _AllProductsGroupState extends State<AllProductsGroup> {
               if(Responsive.isDesktop(context)) {
                 return HomeProductCard(
                   product: allProducts[index],
-                  press: () {},
+                  press: () {
+                    Get.toNamed(
+                        "/product-details/${allProducts[index].id}",
+                        arguments: {"product": allProducts[index]}
+                    );
+                    },
                 );
               }
               return MobileHomeProductCard(
                 product: allProducts[index],
-                press: () {},
+                press: () {
+                  Get.toNamed(
+                      "/product-details/${allProducts[index].id}",
+                      arguments: {"product": allProducts[index]}
+                  );
+                  },
               );
             })
         ),

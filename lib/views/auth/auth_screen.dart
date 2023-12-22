@@ -492,7 +492,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                         //if (result == Constants.loginOk) {
                         //menuController
                             //.changeActiveItemTo(overViewPageDisplayName);
-                        Get.offAllNamed(rootRoute);
+                        Get.offAllNamed(AppPages.root);
                       }
                     } catch (e) {
                       /*var snackbar = const SnackBar(

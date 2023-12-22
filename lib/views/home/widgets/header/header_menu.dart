@@ -26,7 +26,7 @@ class _HeaderMenuState extends State<HeaderMenu> {
           isActive: pageLocation.currentPage == RxString(home) ? true : false,
           title: home,
           press: () {
-            Get.toNamed(rootRoute);
+            Get.toNamed(AppPages.root);
             pageLocation.setPageLocation(home);
             },
         ),
@@ -34,7 +34,7 @@ class _HeaderMenuState extends State<HeaderMenu> {
           isActive: pageLocation.currentPage == RxString(products) ? true : false,
           title: products,
           press: () {
-            Get.toNamed(productsPageRoute);
+            Get.toNamed(AppPages.products);
             pageLocation.setPageLocation(products);
             },
         ),

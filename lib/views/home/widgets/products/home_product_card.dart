@@ -80,23 +80,10 @@ class _HomeProductCardState extends State<HomeProductCard> {
                       height: 40,
                       onPressed: (){},
                       child: const Text(
-                        "Quick view",
+                        "View Details",
                         style: TextStyle( color: kWhiteColor, ),
                       ),
                     ),
-                    const SizedBox(height: 20,),
-                    MaterialButton(
-                      color: kSecondaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      height: 40,
-                      onPressed: (){},
-                      child: const Text(
-                        "Shop now",
-                        style: TextStyle( color: kWhiteColor, ),
-                      ),
-                    )
                   ],
                 )
             ) :
