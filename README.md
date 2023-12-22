@@ -14,7 +14,12 @@ Frontend for my fast API eCommerce API project/repo...Work in Progress...
 ![image](https://github.com/thegera4/flutter_web_ecommerce/assets/84020433/1a98933d-b448-4baf-892c-e73bdf1a3380)
 
 ## Product details screen
-![image](https://github.com/thegera4/flutter_web_ecommerce/assets/84020433/200bc47f-66a8-4e51-84f7-e67bebff2bb1)
+![image](https://github.com/thegera4/flutter_web_ecommerce/assets/84020433/e56c3758-70c5-4f1b-ba7c-1f5122934adb)
+
+## Auth screen
+![image](https://github.com/thegera4/flutter_web_ecommerce/assets/84020433/4253db9e-ce80-4ee9-855c-b9b4bbd3f432)
+
+![image](https://github.com/thegera4/flutter_web_ecommerce/assets/84020433/3e25c276-279c-4733-9b0c-771983b56b88)
 
 
 ## Getting Started
